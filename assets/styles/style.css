@@ -1,4 +1,6 @@
-/* Reset básico */
+/* =============================================
+   RESET E BASE
+   ============================================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,14 +14,18 @@ body {
   overflow-x: hidden;
 }
 
-/* Container principal */
+/* =============================================
+     CONTAINER PRINCIPAL
+     ============================================= */
 .main-container {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
 }
 
-/* Header */
+/* =============================================
+     HEADER
+     ============================================= */
 header {
   background-color: #3f3f3e;
   color: #fff;
@@ -80,6 +86,10 @@ nav {
   color: #e52629;
 }
 
+.menu-toggle::-moz-focus-inner {
+  border: 0;
+}
+
 .nav-content {
   display: flex;
   align-items: center;
@@ -133,7 +143,9 @@ nav {
   height: 30px;
 }
 
-/* Vídeo */
+/* =============================================
+     VÍDEO
+     ============================================= */
 .video-container {
   width: 100vw;
   position: relative;
@@ -155,7 +167,9 @@ nav {
   filter: grayscale(100%);
 }
 
-/* Seções de conteúdo */
+/* =============================================
+     SEÇÕES DE CONTEÚDO
+     ============================================= */
 section {
   width: 100%;
   padding: 40px 20px;
@@ -181,19 +195,19 @@ section h1 {
   font-size: 2em;
   margin-bottom: 20px;
   text-align: center;
-  position: relative; /* Necessário para posicionar a linha */
-  padding-bottom: 15px; /* Espaço para a linha */
+  position: relative;
+  padding-bottom: 15px;
 }
 
 section h1::after {
-  content: ""; /* Cria o elemento */
+  content: "";
   position: absolute;
-  bottom: 0; /* Posiciona na base do h1 */
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translateX(-50%); /* Ajuste fino de centralização */
-  width: 80px; /* Largura da linha */
-  height: 3px; /* Espessura da linha */
-  background-color: #e52629; /* Cor vermelha (igual à borda do header) */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #e52629;
 }
 
 section p {
@@ -224,7 +238,9 @@ section p {
   top: -3px;
 }
 
-/* Mapa */
+/* =============================================
+     MAPA
+     ============================================= */
 #map {
   height: 400px;
   width: 100%;
@@ -243,12 +259,29 @@ section p {
   font-family: Arial, sans-serif;
 }
 
-/* Container principal do botão */
+/* =============================================
+     BOTÕES
+     ============================================= */
+button {
+  background-color: #25d366;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #128c7e;
+}
+
 #orcamento {
   text-align: center;
 }
 
-/* Container do botão WhatsApp */
 #orcamento a {
   display: inline-block;
   text-decoration: none;
@@ -256,7 +289,6 @@ section p {
   width: auto;
 }
 
-/* Estilo do botão */
 #orcamento button {
   background-color: #25d366;
   color: #fff;
@@ -276,24 +308,9 @@ section p {
   background-color: #128c7e;
 }
 
-/* Botão */
-button {
-  background-color: #25d366;
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  font-size: 0.9em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #128c7e;
-}
-
-/* Footer */
+/* =============================================
+     FOOTER
+     ============================================= */
 footer {
   background-color: #3f3f3e;
   color: #fff;
@@ -304,7 +321,9 @@ footer {
   border-top: 2px solid #e52629;
 }
 
-/* Responsividade */
+/* =============================================
+     RESPONSIVIDADE
+     ============================================= */
 @media (max-width: 1200px) {
   .menu-items li {
     margin: 0 12px;
@@ -333,7 +352,6 @@ footer {
   }
 }
 
-/* Ajuste para os ícones sociais em telas médias */
 @media (max-width: 830px) {
   .social-icons {
     margin-left: 10px;
@@ -348,7 +366,6 @@ footer {
   }
 }
 
-/* Ajuste do ponto de ativação do menu hamburguer */
 @media (max-width: 830px) {
   .menu-toggle {
     display: block;
@@ -503,5 +520,155 @@ footer {
 
   #map {
     height: 300px;
+  }
+}
+
+/* =============================================
+   SERVIÇOS - CARDS COM IMAGENS
+   ============================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card h2 {
+  color: #3f3f3e;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.service-card h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #e52629;
+}
+
+.service-card p {
+  color: #666;
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: auto;
+}
+
+/* Se precisar de um ajuste mais preciso */
+.recuperacao-img {
+  object-position: 0 55%; /* Ajuste este valor conforme necessário (0-100%) */
+}
+
+/* Ajuste específico para a imagem de inspeção predial */
+.inspecao-img {
+  object-position: center bottom; /* Foca na parte inferior da imagem */
+}
+
+/* =============================================
+   SEÇÃO DO ENGENHEIRO
+   ============================================= */
+.engenheiro-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.engenheiro-foto {
+  flex: 0 0 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 4px solid #e52629;
+}
+
+.engenheiro-foto img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.engenheiro-foto:hover img {
+  transform: scale(1.03);
+}
+
+.engenheiro-texto {
+  flex: 1;
+}
+
+/* Responsividade para os cards */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-image {
+    height: 150px;
+  }
+
+  .engenheiro-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .engenheiro-foto {
+    flex: 0 0 auto;
+    width: 70%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-image {
+    height: 120px;
+  }
+
+  .engenheiro-foto {
+    width: 100%;
   }
 }

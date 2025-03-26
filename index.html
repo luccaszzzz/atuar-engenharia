@@ -2,28 +2,41 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Configurações básicas do documento -->
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Atuar Engenharia</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Folha de estilo principal -->
     <link rel='stylesheet' type='text/css' media='screen' href='assets/styles/style.css'>
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/img/Logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Bibliotecas externas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" /> <!-- Animações -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> <!-- Mapa Leaflet CSS -->
 </head>
 
 <body>
+    <!-- Container principal que envolve todo o conteúdo -->
     <div class="main-container">
+
+        <!-- Cabeçalho com menu de navegação -->
         <header>
             <nav>
+                <!-- Logo da empresa -->
                 <div class="logo-container">
                     <img src="assets/img/Logo Horizontal.png" alt="Logo Atuar Engenharia" class="logo">
                 </div>
+
+                <!-- Botão do menu hamburguer (visível apenas em mobile) -->
                 <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+                <!-- Conteúdo principal da navegação -->
                 <div class="nav-content">
+                    <!-- Menu principal -->
                     <ul class="menu-items">
                         <li><a href="#empresa">Empresa</a></li>
                         <li><a href="#servicos">Serviços</a></li>
@@ -31,14 +44,18 @@
                         <li><a href="#onde-estamos">Onde Estamos</a></li>
                         <li><a href="#orcamento">Peça seu Orçamento</a></li>
                     </ul>
+
+                    <!-- Ícones de redes sociais -->
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/atuarengenharia_" target="_blank">
+                        <a href="https://www.instagram.com/atuarengenharia_" target="_blank" rel="noopener noreferrer">
                             <img src="assets/img/instagram.png" alt="Instagram">
                         </a>
-                        <a href="https://www.facebook.com/atuarengenhariarn?locale=pt_BR" target="_blank">
+                        <a href="https://www.facebook.com/atuarengenhariarn?locale=pt_BR" target="_blank"
+                            rel="noopener noreferrer">
                             <img src="assets/img/facebook.png" alt="Facebook">
                         </a>
-                        <a href="https://www.youtube.com/@atuarengenharia2841" target="_blank">
+                        <a href="https://www.youtube.com/@atuarengenharia2841" target="_blank"
+                            rel="noopener noreferrer">
                             <img src="assets/img/youtube.png" alt="YouTube">
                         </a>
                     </div>
@@ -46,6 +63,7 @@
             </nav>
         </header>
 
+        <!-- Vídeo de fundo -->
         <div class="video-container">
             <video autoplay muted loop class="background-video">
                 <source src="assets/video/DJI_0138.mp4" type="video/mp4">
@@ -53,6 +71,7 @@
             </video>
         </div>
 
+        <!-- Seção "Sobre a Empresa" -->
         <section id="empresa" data-aos="fade-up">
             <h1>Sobre a Empresa</h1>
             <p>A empresa Atuar Engenharia, através dos anos de dedicação ao setor de Manutenção predial e intensa
@@ -65,33 +84,112 @@
                 o próprio Engenheiro Técnico responsável Sérgio Costa.</p>
         </section>
 
+        <!-- Seção "Nossos Serviços" -->
         <section id="servicos" data-aos="fade-up">
             <h1>Nossos Serviços</h1>
-            <ul>
-                <li>Instalação de caixas de ar-condicionado</li>
-                <li>Trabalho em altura</li>
-                <li>Recuperação de Estruturas</li>
-                <li>Impermeabilização</li>
-                <li>Manutenção de fachada</li>
-                <li>Inspeção predial</li>
-            </ul>
+            <div class="services-grid">
+                <!-- Card 1: Instalação de ar-condicionado -->
+                <div class="service-card">
+                    <div class="card-image first-card"> <!-- Adicionei a classe aqui -->
+                        <img src="assets/img/ar-condicionado.jpg" alt="Instalação de ar-condicionado">
+                    </div>
+                    <div class="card-content">
+                        <h2>Instalação de caixas de ar-condicionado</h2>
+                        <p>Soluções profissionais para instalação segura de unidades de ar-condicionado.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Trabalho em altura -->
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="assets/img/trabalho-altura.png" alt="Trabalho em altura">
+                    </div>
+                    <div class="card-content">
+                        <h2>Trabalho em altura</h2>
+                        <p>Execução de serviços em locais elevados com total segurança e equipamentos adequados.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Recuperação de Estruturas -->
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="assets/img/recuperacao-estrutural.jpg" alt="Recuperação estrutural"
+                            class="recuperacao-img">
+                    </div>
+                    <div class="card-content">
+                        <h2>Recuperação de Estruturas</h2>
+                        <p>Reforma e reforço de estruturas comprometidas, garantindo segurança e durabilidade.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Impermeabilização -->
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="assets/img/impermeabilizacao.jpg" alt="Impermeabilização">
+                    </div>
+                    <div class="card-content">
+                        <h2>Impermeabilização</h2>
+                        <p>Proteção completa contra infiltrações em lajes, paredes e áreas úmidas.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Manutenção de fachada -->
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="assets/img/manutencao-fachada.jpg" alt="Manutenção de fachada">
+                    </div>
+                    <div class="card-content">
+                        <h2>Manutenção de fachada</h2>
+                        <p>Cuidado especializado para preservar e revitalizar a aparência de edifícios.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Inspeção predial -->
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="assets/img/inspecao-predial.jpg" alt="Inspeção predial" class="inspecao-img">
+                    </div>
+                    <div class="card-content">
+                        <h2>Inspeção predial</h2>
+                        <p>Avaliação técnica detalhada para identificar necessidades de manutenção e reparos.</p>
+                    </div>
+                </div>
         </section>
 
+        <!-- Seção "Sobre o Engenheiro" -->
         <section id="engenheiro" data-aos="fade-up">
             <h1>Sobre o Engenheiro</h1>
-            <p>O Engenheiro Técnico Responsável Sérgio Costa teve sua primeira formação em Matemática, através da UFPB –
-                PB. Após 15 anos lecionando e se capacitando através de cinco Pós graduações na área de Educação, entre
-                elas um Mestrado, resolveu buscar a área da construção civil. Foi onde passou a cursar Engenharia Civil
-                na UNP/RN. Graduou-se rapidamente em Engenharia civil e em paralelo a esse curso de graduação, fez
-                também a sua primeira Pós graduação em Perícia e Patologias das edificações, terminando os dois cursos
-                de uma vez só. E aí não parou mais de se capacitar. Deu continuidade com a Pós graduação em Segurança do
-                Trabalho, após finalizar, fez sua próxima Pós em Tecnologia da Impermeabilização, que em paralelo,
-                também cursou outra Pós Graduação em Fachada predial, com o curso de Execução e Fiscalização de Fachadas
-                - Revestimentos Cerâmicos, Pinturas e Texturas. Para finalizar sua trajetória de Formação técnica com
-                chave de ouro, está matriculado na 10º Pós graduação, que é do IDD – Educação avançada, com o curso de
-                Tecnologia de fachadas e revestimentos, a qual está graduando atualmente.</p>
+            <div class="engenheiro-container">
+                <div class="engenheiro-foto">
+                    <img src="assets/img/Engenheiro.jpg" alt="Engenheiro Sérgio Costa">
+                </div>
+                <div class="engenheiro-texto">
+                    <p>O Engenheiro Técnico Responsável Sérgio Costa teve sua primeira formação em Matemática, através
+                        da UFPB –
+                        PB. Após 15 anos lecionando e se capacitando através de cinco Pós graduações na área de
+                        Educação, entre
+                        elas um Mestrado, resolveu buscar a área da construção civil. Foi onde passou a cursar
+                        Engenharia Civil
+                        na UNP/RN. Graduou-se rapidamente em Engenharia civil e em paralelo a esse curso de graduação,
+                        fez
+                        também a sua primeira Pós graduação em Perícia e Patologias das edificações, terminando os dois
+                        cursos
+                        de uma vez só. E aí não parou mais de se capacitar. Deu continuidade com a Pós graduação em
+                        Segurança do
+                        Trabalho, após finalizar, fez sua próxima Pós em Tecnologia da Impermeabilização, que em
+                        paralelo,
+                        também cursou outra Pós Graduação em Fachada predial, com o curso de Execução e Fiscalização de
+                        Fachadas
+                        - Revestimentos Cerâmicos, Pinturas e Texturas. Para finalizar sua trajetória de Formação
+                        técnica com
+                        chave de ouro, está matriculado na 10º Pós graduação, que é do IDD – Educação avançada, com o
+                        curso de
+                        Tecnologia de fachadas e revestimentos, a qual está graduando atualmente.</p>
+                </div>
+            </div>
         </section>
 
+        <!-- Seção "Onde Estamos" com mapa -->
         <section id="onde-estamos" data-aos="fade-up">
             <h1>Onde Estamos</h1>
             <p>Estamos localizados na Rua Cesimar Borges, 1023 - Candelária, Natal - RN, 59064-300. Nossa localização é
@@ -102,6 +200,7 @@
             <div id="map" style="height: 400px; width: 100%; border-radius: 8px; margin-top: 20px;"></div>
         </section>
 
+        <!-- Seção de Orçamento -->
         <section id="orcamento" data-aos="fade-up">
             <h1>Peça seu Orçamento</h1>
             <p>Para solicitar um orçamento, entre em contato conosco pelo WhatsApp clicando no botão abaixo:</p>
@@ -111,18 +210,23 @@
             </a>
         </section>
 
+        <!-- Rodapé -->
         <footer>
             <p>Atuar Engenharia - Todos os direitos reservados</p>
             <p>CNPJ: 45.316.842/0001-95</p>
         </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Scripts JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> <!-- Biblioteca de animações -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> <!-- Mapa Leaflet JS -->
+
+    <!-- Scripts personalizados -->
     <script>
-        // Inicializa a biblioteca AOS para animações
+        // Inicializa animações
         AOS.init();
 
-        // Adiciona rolagem suave para links âncora
+        // Configura rolagem suave para links âncora
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -149,15 +253,16 @@
             });
         });
 
-        // Configuração do mapa Leaflet
+        // Configuração do mapa
         const map = L.map('map', {
-            scrollWheelZoom: false // Desativa o zoom com o scroll do mouse
+            scrollWheelZoom: false
         }).setView([-5.805398, -35.205209], 16);
+
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Ícone personalizado para o marcador
+        // Marcador personalizado
         const redIcon = new L.Icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -167,7 +272,7 @@
             shadowSize: [41, 41]
         });
 
-        // Adiciona o marcador ao mapa
+        // Adiciona marcador no mapa
         const marker = L.marker([-5.805398, -35.205209], { icon: redIcon }).addTo(map)
             .bindPopup("<b>Atuar Engenharia</b><br>R. Cesimar Borges, 1023");
         marker.openPopup();
