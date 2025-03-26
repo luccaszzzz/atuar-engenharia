@@ -8,3 +8,6 @@ assets/video/
 # Ignorar arquivos README (todas as variações)
 README*
 readme*
+
+# Ignorar arquivos zip
+*.zip
