@@ -4,3 +4,6 @@
 
 # Ignorar a pasta específica assets/video/
 assets/video/
+
+# Ignorar todos os arquivos .mp4 dentro da pasta assets/video/
+assets/video/*.mp4
