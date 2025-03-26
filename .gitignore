@@ -4,3 +4,7 @@
 
 # Ignorar a pasta específica assets/video/
 assets/video/
+
+# Ignorar arquivos README (todas as variações)
+README*
+readme*
