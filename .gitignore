@@ -1,0 +1,6 @@
+# Ignorar TODOS os arquivos .mp4 (maiúsculos e minúsculos)
+*.mp4
+*.MP4
+
+# Ignorar a pasta específica assets/video/
+assets/video/
