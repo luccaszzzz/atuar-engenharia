@@ -1,0 +1,273 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #3f3f3e; /* Preto */
+  color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #e52629; /* Linha de separação */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li.logo {
+  margin: auto;
+  margin-left: 150px;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin-left: -100px; /* Ajuste este valor conforme necessário */
+}
+
+.menu-items li {
+  margin: 0 15px;
+}
+
+.social-icons {
+  margin-left: auto;
+  margin-right: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  margin: 0 5px;
+  transition: transform 0.3s ease; /* Adiciona a transição */
+  border-bottom: none !important; /* Remove a linha embaixo */
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px); /* Move o ícone para cima ao passar o mouse */
+  border-bottom: none !important; /* Garante que não apareça borda no hover */
+}
+
+/* Regra para não afetar os ícones sociais */
+nav ul li:not(.social-icons) a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+nav ul li:not(.social-icons) a:hover {
+  color: #e52629; /* Vermelho */
+  border-bottom: 2px solid #e52629; /* Vermelho */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent; /* Linha invisível inicialmente */
+}
+
+nav ul li a:hover {
+  color: #e52629; /* Vermelho */
+  border-bottom: 2px solid #e52629; /* Vermelho */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 1000px; /* Ajuste a altura conforme necessário */
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%); /* Filtro cinza */
+}
+
+#empresa {
+  padding: 40px 20px;
+  background-color: #3f3f3e; /* Preto */
+  color: #fff; /* Branco */
+  text-align: left;
+}
+
+#empresa h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#empresa p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+#servicos {
+  padding: 40px 20px;
+  background-color: #f4f4f4; /* Cor original */
+  color: #333; /* Preto */
+  text-align: left;
+}
+
+#servicos h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#servicos ul {
+  list-style: none;
+  padding: 0;
+}
+
+#servicos ul li {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+#engenheiro {
+  padding: 40px 20px;
+  background-color: #3f3f3e; /* Preto */
+  color: #fff; /* Branco */
+  text-align: left;
+}
+
+#engenheiro h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#engenheiro p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Estilos para a seção "Onde Estamos" */
+#onde-estamos {
+  padding: 40px 20px;
+  background-color: #f4f4f4; /* Cor original */
+  color: #333; /* Preto */
+  text-align: left;
+}
+
+#onde-estamos h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#onde-estamos p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #e52629;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para a seção "Solicitar Visita" */
+#solicitar-visita {
+  padding: 40px 20px;
+  background-color: #3f3f3e; /* Preto */
+  color: #fff; /* Branco */
+  text-align: left;
+}
+
+#solicitar-visita h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#solicitar-visita p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+#solicitar-visita form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* Define a largura máxima do formulário */
+  margin: 0 auto; /* Centraliza o formulário */
+}
+
+#solicitar-visita label {
+  margin-top: 10px;
+}
+
+#solicitar-visita input,
+#solicitar-visita textarea {
+  padding: 8px; /* Diminui o padding */
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9em; /* Diminui o tamanho da fonte */
+}
+
+#solicitar-visita button {
+  background-color: #25d366; /* Verde do WhatsApp */
+  color: #fff;
+  padding: 8px 16px; /* Diminui o padding */
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em; /* Diminui o tamanho da fonte */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+#solicitar-visita button:hover {
+  background-color: #128c7e; /* Verde escuro do WhatsApp */
+}
+
+#solicitar-visita form button {
+  background-color: #e52629; /* Vermelho */
+  padding: 8px 16px; /* Diminui o padding */
+  font-size: 0.9em; /* Diminui o tamanho da fonte */
+}
+
+#solicitar-visita form button:hover {
+  background-color: #c41f24; /* Vermelho escuro */
+}
+
+footer {
+  background-color: #3f3f3e; /* Preto */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  bottom: 0;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  border-top: 2px solid #e52629; /* Linha de separação vermelha */
+}

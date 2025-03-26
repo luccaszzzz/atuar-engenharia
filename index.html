@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Atuar Engenharia</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/styles/style.css'>
+    <link rel="icon" type="image/png" href="assets/img/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- OpenStreetMap (gratuito) -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="logo"><img src="assets/img/Logo Horizontal.png" alt="Logo Atuar Engenharia"
+                        style="height: 70px;"></li>
+                <div class="menu-items">
+                    <li><a href="#empresa">Empresa</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#engenheiro">Engenheiro</a></li>
+                    <li><a href="#onde-estamos">Onde Estamos</a></li>
+                    <li><a href="#solicitar-visita">Solicitar Visita</a></li>
+                </div>
+                <li class="social-icons">
+                    <a href="https://www.instagram.com/atuarengenharia_" target="_blank"><img
+                            src="assets/img/instagram.png" alt="Instagram" style="height: 30px;"></a>
+                    <a href="https://www.facebook.com/atuarengenhariarn?locale=pt_BR" target="_blank"><img
+                            src="assets/img/facebook.png" alt="Facebook" style="height: 30px;"></a>
+                    <a href="https://www.youtube.com/@atuarengenharia2841" target="_blank"><img
+                            src="assets/img/youtube.png" alt="YouTube" style="height: 30px;"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="video-container">
+        <video autoplay muted loop class="background-video">
+            <source src="assets/video/DJI_0138.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
+
+    <section id="empresa" data-aos="fade-up">
+        <h1>Sobre a Empresa</h1>
+        <p>A empresa Atuar Engenharia, através dos anos de dedicação ao setor de Manutenção predial e intensa dedicação
+            na conquista na prestação de serviço de qualidade, passou a se destacar fortemente no mercado de Manutenção
+            de Fachada predial e Impermeabilização de lajes. Após firmar dezenas de compromissos, vem colhendo a
+            satisfação de sua clientela. Seu quadro técnico é composto por engenheiros especializados e comprometidos
+            com as áreas de Perícia, Segurança do trabalho, Recuperação Estrutural, Impermeabilização, Fachada predial.
+            Com essas qualificações, direcionamos nossos serviços para área de Condomínios, Hotéis, Escolas, Clínicas,
+            Hospitais, dentre outros. O seu idealizador, criador, desenvolvedor e proprietário é o próprio Engenheiro
+            Técnico responsável Sérgio Costa.</p>
+    </section>
+
+    <section id="servicos" data-aos="fade-up">
+        <h1>Nossos Serviços</h1>
+        <ul>
+            <li>Instalação de caixas de ar-condicionado</li>
+            <li>Trabalho em altura</li>
+            <li>Recuperação de Estruturas</li>
+            <li>Impermeabilização</li>
+            <li>Manutenção de fachada</li>
+            <li>Inspeção predial</li>
+        </ul>
+    </section>
+
+    <section id="engenheiro" data-aos="fade-up">
+        <h1>Sobre o Engenheiro</h1>
+        <p>O Engenheiro Técnico Responsável Sérgio Costa teve sua primeira formação em Matemática, através da UFPB – PB.
+            Após 15 anos lecionando e se capacitando através de cinco Pós graduações na área de Educação, entre elas um
+            Mestrado, resolveu buscar a área da construção civil. Foi onde passou a cursar Engenharia Civil na UNP/RN.
+            Graduou-se rapidamente em Engenharia civil e em paralelo a esse curso de graduação, fez também a sua
+            primeira Pós graduação em Perícia e Patologias das edificações, terminando os dois cursos de uma vez só. E
+            aí não parou mais de se capacitar. Deu continuidade com a Pós graduação em Segurança do Trabalho, após
+            finalizar, fez sua próxima Pós em Tecnologia da Impermeabilização, que em paralelo, também cursou outra Pós
+            Graduação em Fachada predial, com o curso de Execução e Fiscalização de Fachadas - Revestimentos Cerâmicos,
+            Pinturas e Texturas. Para finalizar sua trajetória de Formação técnica com chave de ouro, está matriculado
+            na 10º Pós graduação, que é do IDD – Educação avançada, com o curso de Tecnologia de fachadas e
+            revestimentos, a qual está graduando atualmente.</p>
+    </section>
+
+    <section id="onde-estamos" data-aos="fade-up">
+        <h1>Onde Estamos</h1>
+        <p>Estamos localizados na Rua Cesimar Borges, 1023 - Candelária, Natal - RN, 59064-300. Nossa localização é de
+            fácil acesso e estamos próximos a diversos pontos de referência na cidade. Venha nos visitar para conhecer
+            mais sobre nossos serviços e como podemos ajudar você.</p>
+        <p>Além disso, também atendemos clientes na Paraíba, oferecendo nossos serviços com a mesma qualidade e
+            dedicação.</p>
+        <div id="map" style="height: 400px; width: 100%; border-radius: 8px; margin-top: 20px;"></div>
+    </section>
+
+    <section id="solicitar-visita" data-aos="fade-up">
+        <h1>Solicitar Visita</h1>
+        <p>Para solicitar uma visita, entre em contato conosco pelo WhatsApp clicando no botão abaixo:</p>
+        <a href="https://wa.me/558487087777?text=Olá,%20gostaria%20de%20solicitar%20uma%20visita." target="_blank"
+            rel="noopener noreferrer">
+            <button>Entrar em Contato pelo WhatsApp</button>
+        </a>
+    </section>
+
+    <footer>
+        <p>Atuar Engenharia - Todos os direitos reservados</p>
+        <p>CNPJ: 45.316.842/0001-95</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+        // Inicializa o mapa
+        const map = L.map('map').setView([-5.805398, -35.205209], 16);
+
+        // Adiciona o tile layer do OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Cria um ícone vermelho personalizado
+        const redIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        // Adiciona o marcador com ícone vermelho
+        const marker = L.marker([-5.805398, -35.205209], { icon: redIcon }).addTo(map)
+            .bindPopup("<b>Atuar Engenharia</b><br>R. Cesimar Borges, 1023");
+
+        // Abre o popup automaticamente
+        marker.openPopup();
+    </script>
+</body>
+
+</html>
