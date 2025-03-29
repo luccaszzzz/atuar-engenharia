@@ -32,7 +32,10 @@
                 </div>
 
                 <!-- Botão do menu hamburguer (visível apenas em mobile) -->
-                <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span class="menu-icon">☰</span>
+                    <span class="close-icon" style="display:none">✕</span>
+                </button>
 
                 <!-- Conteúdo principal da navegação -->
                 <div class="nav-content">
@@ -104,7 +107,7 @@
                 <!-- Card 1: Instalação de ar-condicionado -->
                 <div class="service-card">
                     <div class="card-image first-card"> <!-- Adicionei a classe aqui -->
-                        <img src="assets/img/ar-condicionado.webp" alt="Instalação de ar-condicionado" loading="lazy">
+                        <img src="assets/img/ar-condicionado.webp" alt="Instalação de ar-condicionado">
                     </div>
                     <div class="card-content">
                         <h2>Instalação de caixas de ar-condicionado</h2>
@@ -115,7 +118,7 @@
                 <!-- Card 2: Trabalho em altura -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/img/trabalho-altura.webp" alt="Trabalho em altura" loading="lazy">
+                        <img src="assets/img/trabalho-altura.webp" alt="Trabalho em altura">
                     </div>
                     <div class="card-content">
                         <h2>Trabalho em altura</h2>
@@ -127,7 +130,7 @@
                 <div class="service-card">
                     <div class="card-image">
                         <img src="assets/img/recuperacao-estrutural.webp" alt="Recuperação estrutural"
-                            class="recuperacao-img" loading="lazy">
+                            class="recuperacao-img">
                     </div>
                     <div class="card-content">
                         <h2>Recuperação de Estruturas</h2>
@@ -138,7 +141,7 @@
                 <!-- Card 4: Impermeabilização -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/img/impermeabilizacao.webp" alt="Impermeabilização" loading="lazy">
+                        <img src="assets/img/impermeabilizacao.webp" alt="Impermeabilização">
                     </div>
                     <div class="card-content">
                         <h2>Impermeabilização</h2>
@@ -149,7 +152,7 @@
                 <!-- Card 5: Manutenção de fachada -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/img/manutencao-fachada.webp" alt="Manutenção de fachada" loading="lazy">
+                        <img src="assets/img/manutencao-fachada.webp" alt="Manutenção de fachada">
                     </div>
                     <div class="card-content">
                         <h2>Manutenção de fachada</h2>
@@ -160,7 +163,7 @@
                 <!-- Card 6: Inspeção predial -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/img/inspecao-predial.webp" alt="Inspeção predial" class="inspecao-img" loading="lazy">
+                        <img src="assets/img/inspecao-predial.webp" alt="Inspeção predial" class="inspecao-img">
                     </div>
                     <div class="card-content">
                         <h2>Inspeção predial</h2>
@@ -314,20 +317,23 @@
         });
 
         // Menu responsivo
-        const menuToggle = document.querySelector('.menu-toggle'); // Seleciona o botão do menu hambúrguer
-        const navContent = document.querySelector('.nav-content'); // Seleciona o conteúdo do menu de navegação
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navContent = document.querySelector('.nav-content');
 
         menuToggle.addEventListener('click', () => {
-            navContent.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
-            document.body.style.overflow = navContent.classList.contains('active') ? 'hidden' : 'auto'; // Bloqueia/desbloqueia a rolagem da página
-        });
+            const isActive = navContent.classList.toggle('active');
+            document.body.style.overflow = isActive ? 'hidden' : 'auto';
 
-        // Fecha o menu ao clicar em um item
-        document.querySelectorAll('.menu-items a, .social-icons a').forEach(item => {
-            item.addEventListener('click', () => {
-                navContent.classList.remove('active'); // Remove a classe 'active' para fechar o menu
-                document.body.style.overflow = 'auto'; // Restaura a rolagem da página
-            });
+            // Alterna entre o ícone do menu e o "X"
+            const menuIcon = document.querySelector('.menu-icon');
+            const closeIcon = document.querySelector('.close-icon');
+            if (isActive) {
+                menuIcon.style.display = 'none'; // Esconde o ícone do menu
+                closeIcon.style.display = 'inline'; // Mostra o "X"
+            } else {
+                menuIcon.style.display = 'inline'; // Mostra o ícone do menu
+                closeIcon.style.display = 'none'; // Esconde o "X"
+            }
         });
 
         // Configuração do mapa
