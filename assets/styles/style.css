@@ -273,7 +273,7 @@ section p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/blog-background.jpg");
+  background-image: url("../img/blog-background.webp");
   background-size: cover;
   background-position: center;
   filter: grayscale(100%);
