@@ -334,6 +334,29 @@
                 menuIcon.style.display = 'inline'; // Mostra o ícone do menu
                 closeIcon.style.display = 'none'; // Esconde o "X"
             }
+
+            // Fecha o menu ao clicar em um item
+            document.querySelectorAll('.menu-items a, .social-icons a').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Fecha o menu
+                    navContent.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+
+                    // Reseta o botão do menu
+                    document.querySelector('.menu-icon').style.display = 'inline';
+                    document.querySelector('.close-icon').style.display = 'none';
+                    document.querySelector('.menu-toggle').style.color = 'white';
+
+                    // Rolagem suave para a seção (mantendo seu código existente)
+                    const target = e.currentTarget.getAttribute('href');
+                    if (target.startsWith('#')) {
+                        e.preventDefault();
+                        document.querySelector(target).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
 
         // Configuração do mapa
