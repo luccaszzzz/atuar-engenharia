@@ -12,7 +12,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='assets/styles/style.css'>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/img/Logo.png">
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
 
     <!-- Bibliotecas externas -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" /> <!-- Animações -->
@@ -28,7 +28,7 @@
             <nav>
                 <!-- Logo da empresa -->
                 <div class="logo-container">
-                    <img src="assets/img/Logo Horizontal.png" alt="Logo Atuar Engenharia" class="logo">
+                    <img src="assets/img/logo_horizontal.png" alt="Logo Atuar Engenharia" class="logo">
                 </div>
 
                 <!-- Botão do menu hamburguer (visível apenas em mobile) -->
@@ -58,6 +58,9 @@
                             rel="noopener noreferrer">
                             <img src="assets/img/youtube.png" alt="YouTube">
                         </a>
+                        <a href="https://www.tiktok.com/@atuarengenharia" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/img/tiktok.png" alt="TikTok">
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -66,22 +69,30 @@
         <!-- Vídeo de fundo -->
         <div class="video-container">
             <video autoplay muted loop class="background-video">
-                <source src="assets/video/DJI_0138.mp4" type="video/mp4">
+                <source src="assets/video/video_edificio.MP4" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
             </video>
         </div>
 
         <!-- Seção "Sobre a Empresa" -->
         <section id="empresa" data-aos="fade-up">
-            <h1>Sobre a Empresa</h1>
-            <p>A empresa Atuar Engenharia, através dos anos de dedicação ao setor de Manutenção predial e intensa
-                dedicação na conquista na prestação de serviço de qualidade, passou a se destacar fortemente no mercado
-                de Manutenção de Fachada predial e Impermeabilização de lajes. Após firmar dezenas de compromissos, vem
-                colhendo a satisfação de sua clientela. Seu quadro técnico é composto por engenheiros especializados e
-                comprometidos com as áreas de Perícia, Segurança do trabalho, Recuperação Estrutural, Impermeabilização,
-                Fachada predial. Com essas qualificações, direcionamos nossos serviços para área de Condomínios, Hotéis,
-                Escolas, Clínicas, Hospitais, dentre outros. O seu idealizador, criador, desenvolvedor e proprietário é
-                o próprio Engenheiro Técnico responsável Sérgio Costa.</p>
+            <div class="content">
+                <h1>Sobre a Empresa</h1>
+                <p>A empresa Atuar Engenharia, através dos anos de dedicação ao setor de Manutenção predial e intensa
+                    dedicação na conquista na prestação de serviço de qualidade, passou a se destacar fortemente no
+                    mercado
+                    de Manutenção de Fachada predial e Impermeabilização de lajes. Após firmar dezenas de compromissos,
+                    vem
+                    colhendo a satisfação de sua clientela. Seu quadro técnico é composto por engenheiros especializados
+                    e
+                    comprometidos com as áreas de Perícia, Segurança do trabalho, Recuperação Estrutural,
+                    Impermeabilização,
+                    Fachada predial. Com essas qualificações, direcionamos nossos serviços para área de Condomínios,
+                    Hotéis,
+                    Escolas, Clínicas, Hospitais, dentre outros. O seu idealizador, criador, desenvolvedor e
+                    proprietário é
+                    o próprio Engenheiro Técnico responsável Sérgio Costa.</p>
+            </div>
         </section>
 
         <!-- Seção "Nossos Serviços" -->
@@ -161,7 +172,7 @@
             <h1>Sobre o Engenheiro</h1>
             <div class="engenheiro-container">
                 <div class="engenheiro-foto">
-                    <img src="assets/img/Engenheiro.jpg" alt="Engenheiro Sérgio Costa">
+                    <img src="assets/img/engenheiro.jpg" alt="Engenheiro Sérgio Costa">
                 </div>
                 <div class="engenheiro-texto">
                     <p>O Engenheiro Técnico Responsável Sérgio Costa teve sua primeira formação em Matemática, através
@@ -197,7 +208,10 @@
                 conhecer mais sobre nossos serviços e como podemos ajudar você.</p>
             <p>Além disso, também atendemos clientes na Paraíba, oferecendo nossos serviços com a mesma qualidade e
                 dedicação.</p>
-            <div id="map" style="height: 400px; width: 100%; border-radius: 8px; margin-top: 20px;"></div>
+            <div class="map-container">
+                <div id="map" style="height: 400px; width: 100%; border-radius: 8px; margin-top: 20px;"></div>
+                <div class="map-overlay"></div>
+            </div>
         </section>
 
         <!-- Seção de Orçamento -->
@@ -237,45 +251,60 @@
         });
 
         // Menu responsivo
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navContent = document.querySelector('.nav-content');
+        const menuToggle = document.querySelector('.menu-toggle'); // Seleciona o botão do menu hambúrguer
+        const navContent = document.querySelector('.nav-content'); // Seleciona o conteúdo do menu de navegação
 
         menuToggle.addEventListener('click', () => {
-            navContent.classList.toggle('active');
-            document.body.style.overflow = navContent.classList.contains('active') ? 'hidden' : 'auto';
+            navContent.classList.toggle('active'); // Alterna a classe 'active' para abrir/fechar o menu
+            document.body.style.overflow = navContent.classList.contains('active') ? 'hidden' : 'auto'; // Bloqueia/desbloqueia a rolagem da página
         });
 
         // Fecha o menu ao clicar em um item
         document.querySelectorAll('.menu-items a, .social-icons a').forEach(item => {
             item.addEventListener('click', () => {
-                navContent.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                navContent.classList.remove('active'); // Remove a classe 'active' para fechar o menu
+                document.body.style.overflow = 'auto'; // Restaura a rolagem da página
             });
         });
 
         // Configuração do mapa
         const map = L.map('map', {
-            scrollWheelZoom: false
-        }).setView([-5.805398, -35.205209], 16);
+            scrollWheelZoom: false // Desativa o zoom com a roda do mouse
+        }).setView([-5.805398, -35.205209], 16); // Define a posição inicial do mapa (latitude, longitude) e o nível de zoom
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+        // Seleciona os elementos do mapa e da camada de sobreposição
+        const mapContainer = document.querySelector('.map-container'); // Contêiner principal do mapa
+        const mapOverlay = document.querySelector('.map-overlay'); // Camada transparente sobre o mapa
 
-        // Marcador personalizado
-        const redIcon = new L.Icon({
-            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
+        // Ativa a interação com o mapa ao clicar na camada de sobreposição
+        mapOverlay.addEventListener('click', () => {
+            mapContainer.classList.add('active'); // Adiciona a classe 'active' para permitir a interação com o mapa
         });
 
-        // Adiciona marcador no mapa
-        const marker = L.marker([-5.805398, -35.205209], { icon: redIcon }).addTo(map)
-            .bindPopup("<b>Atuar Engenharia</b><br>R. Cesimar Borges, 1023");
-        marker.openPopup();
+        // Remove a interação com o mapa quando o usuário rolar a página
+        document.addEventListener('scroll', () => {
+            mapContainer.classList.remove('active'); // Remove a classe 'active' para desativar a interação com o mapa
+        });
+
+        // Adiciona o tile layer do OpenStreetMap ao mapa
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' // Créditos do OpenStreetMap
+        }).addTo(map);
+
+        // Configuração do marcador personalizado
+        const redIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png', // URL do ícone do marcador
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', // URL da sombra do marcador
+            iconSize: [25, 41], // Tamanho do ícone
+            iconAnchor: [12, 41], // Ponto de ancoragem do ícone
+            popupAnchor: [1, -34], // Posição do popup em relação ao ícone
+            shadowSize: [41, 41] // Tamanho da sombra
+        });
+
+        // Adiciona um marcador ao mapa com um popup
+        const marker = L.marker([-5.805398, -35.205209], { icon: redIcon }).addTo(map) // Adiciona o marcador na posição especificada
+            .bindPopup("<b>Atuar Engenharia</b><br>R. Cesimar Borges, 1023"); // Define o conteúdo do popup
+        marker.openPopup(); // Abre o popup automaticamente
     </script>
 </body>
 

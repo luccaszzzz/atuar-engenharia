@@ -178,6 +178,20 @@ section {
   margin: 0 auto;
 }
 
+#empresa {
+  width: 100vw; /* Ocupa toda a largura da viewport */
+  max-width: none; /* Remove a limitação de largura */
+  margin: 0; /* Remove margens */
+  padding: 40px 0px; /* Mantém o espaçamento interno */
+  box-sizing: border-box; /* Inclui padding no cálculo da largura */
+}
+
+#empresa .content {
+  max-width: 1200px; /* Limita a largura do texto */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  padding: 0 20px; /* Adiciona espaçamento interno nas laterais */
+}
+
 #empresa,
 #engenheiro,
 #orcamento {
@@ -239,6 +253,124 @@ section p {
 }
 
 /* =============================================
+   SERVIÇOS - CARDS COM IMAGENS
+   ============================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card h2 {
+  color: #3f3f3e;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.service-card h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #e52629;
+}
+
+.service-card p {
+  color: #666;
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: auto;
+}
+
+/* Ajuste específico para a imagem de inspeção predial */
+.inspecao-img {
+  object-position: center bottom; /* Foca na parte inferior da imagem */
+}
+
+/* Ajuste mais preciso */
+.recuperacao-img {
+  object-position: 0 55%;
+}
+
+/* =============================================
+   SEÇÃO DO ENGENHEIRO
+   ============================================= */
+.engenheiro-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.engenheiro-foto {
+  flex: 0 0 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 4px solid #e52629;
+}
+
+.engenheiro-foto img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.engenheiro-foto:hover img {
+  transform: scale(1.03);
+}
+
+.engenheiro-texto {
+  flex: 1;
+}
+
+/* =============================================
      MAPA
      ============================================= */
 #map {
@@ -257,6 +389,32 @@ section p {
 .leaflet-popup-content {
   margin: 8px 12px;
   font-family: Arial, sans-serif;
+}
+
+.map-container {
+  position: relative;
+}
+
+#map {
+  pointer-events: none; /* Desativa a interação por padrão */
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 10; /* Coloca a camada acima do mapa */
+}
+
+.map-container.active #map {
+  pointer-events: auto; /* Ativa a interação quando o mapa está ativo */
+}
+
+.map-container.active .map-overlay {
+  display: none; /* Remove a camada quando o mapa está ativo */
 }
 
 /* =============================================
@@ -280,6 +438,11 @@ button:hover {
 
 #orcamento {
   text-align: center;
+}
+
+#orcamento p {
+  text-align: center; /* Centraliza o texto */
+  margin: 0 auto; /* Garante espaçamento uniforme */
 }
 
 #orcamento a {
@@ -352,17 +515,24 @@ footer {
   }
 }
 
-@media (max-width: 830px) {
+@media (max-width: 871px) and (min-width: 831px) {
   .social-icons {
-    margin-left: 10px;
-  }
-
-  .social-icons a {
-    margin: 0 5px;
+    display: flex;
+    justify-content: center; /* Centraliza os ícones horizontalmente */
+    flex-wrap: wrap; /* Permite que os ícones quebrem linha, se necessário */
+    gap: 10px; /* Espaçamento entre os ícones */
+    margin: 0 auto; /* Centraliza o contêiner */
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura da tela */
+    overflow: hidden; /* Evita que os ícones escapem */
   }
 
   .social-icons img {
-    height: 25px;
+    height: 30px; /* Reduz o tamanho dos ícones */
+    width: auto; /* Mantém a proporção da imagem */
+  }
+
+  .social-icons a {
+    margin: 0 5px; /* Ajusta o espaçamento lateral */
   }
 }
 
@@ -419,6 +589,15 @@ footer {
 
   .social-icons {
     margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  .social-icons a {
+    margin: 0 5px;
+  }
+
+  .social-icons img {
+    height: 25px;
   }
 
   .logo {
@@ -505,142 +684,6 @@ footer {
   }
 }
 
-@media (max-width: 576px) {
-  .logo {
-    height: 50px;
-  }
-
-  .social-icons img {
-    height: 25px;
-  }
-
-  .video-container {
-    height: 300px;
-  }
-
-  #map {
-    height: 300px;
-  }
-}
-
-/* =============================================
-   SERVIÇOS - CARDS COM IMAGENS
-   ============================================= */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.service-card {
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.card-image {
-  height: 180px;
-  overflow: hidden;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.service-card:hover .card-image img {
-  transform: scale(1.05);
-}
-
-.card-content {
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.service-card h2 {
-  color: #3f3f3e;
-  font-size: 1.3em;
-  margin-bottom: 15px;
-  position: relative;
-  padding-bottom: 10px;
-}
-
-.service-card h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background-color: #e52629;
-}
-
-.service-card p {
-  color: #666;
-  font-size: 1em;
-  line-height: 1.5;
-  text-align: left;
-  margin-top: auto;
-}
-
-/* Se precisar de um ajuste mais preciso */
-.recuperacao-img {
-  object-position: 0 55%; /* Ajuste este valor conforme necessário (0-100%) */
-}
-
-/* Ajuste específico para a imagem de inspeção predial */
-.inspecao-img {
-  object-position: center bottom; /* Foca na parte inferior da imagem */
-}
-
-/* =============================================
-   SEÇÃO DO ENGENHEIRO
-   ============================================= */
-.engenheiro-container {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-.engenheiro-foto {
-  flex: 0 0 300px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border: 4px solid #e52629;
-}
-
-.engenheiro-foto img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.engenheiro-foto:hover img {
-  transform: scale(1.03);
-}
-
-.engenheiro-texto {
-  flex: 1;
-}
-
 /* Responsividade para os cards */
 @media (max-width: 768px) {
   .services-grid {
@@ -660,6 +703,24 @@ footer {
     flex: 0 0 auto;
     width: 70%;
     max-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    height: 50px;
+  }
+
+  .social-icons img {
+    height: 25px;
+  }
+
+  .video-container {
+    height: 300px;
+  }
+
+  #map {
+    height: 300px;
   }
 }
 
