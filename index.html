@@ -40,9 +40,11 @@
                     <ul class="menu-items">
                         <li><a href="#empresa">Empresa</a></li>
                         <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="https://blog.atuarengenharia.com" target="_blank" rel="noopener noreferrer">Blog
+                                <span style="font-size:0.8em;">↗</span></a></li>
                         <li><a href="#engenheiro">Engenheiro</a></li>
                         <li><a href="#onde-estamos">Onde Estamos</a></li>
-                        <li><a href="#orcamento">Peça seu Orçamento</a></li>
+                        <li><a href="#orcamento">Orçamento</a></li>
                     </ul>
 
                     <!-- Ícones de redes sociais -->
@@ -167,6 +169,17 @@
                 </div>
         </section>
 
+        <section id="blog" data-aos="fade-up">
+            <div class="blog-bg-image"></div>
+            <div class="content">
+                <h1>Blog</h1>
+                <p>Acesse nosso blog para artigos técnicos sobre engenharia e manutenção predial.</p>
+                <a href="https://blog.atuarengenharia.com" target="_blank" rel="noopener noreferrer" class="button">
+                    Acesse o Blog
+                </a>
+            </div>
+        </section>
+
         <!-- Seção "Sobre o Engenheiro" -->
         <section id="engenheiro" data-aos="fade-up">
             <h1>Sobre o Engenheiro</h1>
@@ -226,8 +239,58 @@
 
         <!-- Rodapé -->
         <footer>
-            <p>Atuar Engenharia - Todos os direitos reservados</p>
-            <p>CNPJ: 45.316.842/0001-95</p>
+            <div class="footer-container">
+                <!-- Seção 1: Logo e CNPJ -->
+                <div class="footer-section">
+                    <img src="assets/img/logo.png" alt="Atuar Engenharia" class="footer-logo">
+                    <p>CNPJ: 45.316.842/0001-95</p>
+                </div>
+
+                <!-- Seção 2: Links Úteis -->
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#engenheiro">Engenheiro</a></li>
+                        <li><a href="https://blog.atuarengenharia.com" target="_blank" rel="noopener noreferrer">Blog
+                                <span style="font-size:0.8em;">↗</span></a></li>
+                        <li><a href="#orcamento">Orçamento</a></li>
+                    </ul>
+                </div>
+
+                <!-- Seção 3: Contatos -->
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul class="contact-info">
+                        <li><img src="assets/img/icon-phone.png" alt="Telefone"> (84) 98708-7777</li>
+                        <li><img src="assets/img/icon-email.png" alt="E-mail"> contato@atuarengenharia.com.br</li>
+                        <li><img src="assets/img/icon-gps.png" alt="Endereço"> R. Cesimar Borges, 1023 - Natal/RN</li>
+                    </ul>
+                </div>
+
+                <!-- Seção 4: Redes Sociais -->
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-icons footer-social-icons">
+                        <!-- Mesmos ícones do header -->
+                        <a href="https://www.instagram.com/atuarengenharia_" target="_blank" rel="noopener"><img
+                                src="assets/img/instagram.png" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/atuarengenhariarn" target="_blank" rel="noopener"><img
+                                src="assets/img/facebook.png" alt="Facebook"></a>
+                        <a href="https://www.youtube.com/@atuarengenharia2841" target="_blank" rel="noopener"><img
+                                src="assets/img/youtube.png" alt="YouTube"></a>
+                        <a href="https://www.tiktok.com/@atuarengenharia" target="_blank" rel="noopener"><img
+                                src="assets/img/tiktok.png" alt="TikTok"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <p>&copy; <span id="current-year"></span> Atuar Engenharia - Todos os direitos reservados</p>
+                <p>Desenvolvido por <a href="https://github.com/luccaszzzz" target="_blank" rel="noopener noreferrer"
+                        style="color: #999; text-decoration: none;">luccaszzzz (GitHub)</a></p>
+            </div>
         </footer>
     </div>
 
@@ -305,6 +368,9 @@
         const marker = L.marker([-5.805398, -35.205209], { icon: redIcon }).addTo(map) // Adiciona o marcador na posição especificada
             .bindPopup("<b>Atuar Engenharia</b><br>R. Cesimar Borges, 1023"); // Define o conteúdo do popup
         marker.openPopup(); // Abre o popup automaticamente
+
+        // Atualiza o ano no copyright automaticamente
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 
