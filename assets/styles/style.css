@@ -51,6 +51,7 @@ nav {
   display: flex;
   align-items: center;
   height: 70px;
+  margin-right: auto;
 }
 
 .logo {
@@ -634,7 +635,7 @@ footer {
 
 /* Estilo específico para os ícones do rodapé */
 .footer-social-icons {
-  display: flex;
+  display: flex !important;
   justify-content: center; /* Centraliza horizontalmente */
   gap: 0px; /* Espaçamento entre os ícones */
   flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
@@ -657,7 +658,7 @@ footer {
   transform: translateY(-3px);
 }
 
-/* Opcional: manter o efeito de escala nos ícones */
+/* Manter o efeito de escala nos ícones */
 .footer-social-icons img {
   transition: transform 0.3s ease;
 }
@@ -678,6 +679,11 @@ footer {
 /* =============================================
      RESPONSIVIDADE
      ============================================= */
+/* =============================================
+   RESPONSIVIDADE - ORGANIZADO DO MAIOR PARA O MENOR
+   ============================================= */
+
+/* 1200px para baixo */
 @media (max-width: 1200px) {
   .menu-items li {
     margin: 0 12px;
@@ -688,6 +694,79 @@ footer {
   }
 }
 
+/* 1053px para baixo - Ativa menu hamburguer */
+@media (max-width: 1053px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(63, 63, 62, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 80px;
+  }
+
+  .nav-content.active {
+    transform: translateY(0);
+  }
+
+  .menu-items,
+  .social-icons {
+    display: none;
+  }
+
+  .nav-content.active .menu-items,
+  .nav-content.active .social-icons {
+    display: flex;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .menu-items li {
+    margin: 15px 0;
+  }
+
+  .menu-items a {
+    font-size: 1.2em;
+    padding: 10px 20px;
+  }
+
+  .social-icons {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .logo-container {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* 992px para baixo */
 @media (max-width: 992px) {
   .video-container {
     height: 500px;
@@ -706,28 +785,71 @@ footer {
   }
 }
 
-@media (max-width: 871px) and (min-width: 831px) {
-  .social-icons {
+/* 901px-1150px - Ajustes específicos */
+@media (min-width: 901px) and (max-width: 1150px) {
+  nav {
+    padding: 0 5%;
+    height: 90px;
     display: flex;
-    justify-content: center; /* Centraliza os ícones horizontalmente */
-    flex-wrap: wrap; /* Permite que os ícones quebrem linha, se necessário */
-    gap: 10px; /* Espaçamento entre os ícones */
-    margin: 0 auto; /* Centraliza o contêiner */
-    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura da tela */
-    overflow: hidden; /* Evita que os ícones escapem */
+    align-items: center;
   }
 
-  .social-icons img {
-    height: 30px; /* Reduz o tamanho dos ícones */
-    width: auto; /* Mantém a proporção da imagem */
+  .nav-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .menu-items {
+    display: flex;
+    margin-right: 15px;
+  }
+
+  .menu-items li {
+    margin: 0 12px;
+  }
+
+  .menu-items li:last-child {
+    margin-right: 15px;
+  }
+
+  .social-icons {
+    margin-left: 0;
+    margin-right: 20px;
+    gap: 12px;
+    padding: 15px 0 15px 20px;
+    display: flex;
+    align-items: center;
   }
 
   .social-icons a {
-    margin: 0 5px; /* Ajusta o espaçamento lateral */
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .social-icons img {
+    height: 28px;
+    width: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .logo {
+    margin-left: 20px;
+    height: 60px;
+  }
+
+  .logo-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
   }
 }
 
-@media (max-width: 830px) {
+/* 900px para baixo */
+@media (max-width: 900px) {
   .menu-toggle {
     display: block;
   }
@@ -779,38 +901,64 @@ footer {
   }
 
   .social-icons {
+    flex-direction: row;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 0;
   }
 
   .social-icons a {
-    margin: 0 5px;
+    margin: 0 10px;
   }
 
   .social-icons img {
     height: 25px;
   }
 
+  .logo-container {
+    justify-content: center;
+    width: 100%;
+  }
+
   .logo {
     height: 60px;
-    margin-left: 0;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
   }
 }
 
+/* 871px-831px - Ajuste muito específico */
+@media (max-width: 871px) and (min-width: 831px) {
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .social-icons img {
+    height: 30px;
+    width: auto;
+  }
+
+  .social-icons a {
+    margin: 0 5px;
+  }
+}
+
+/* 768px para baixo */
 @media (max-width: 768px) {
   header {
-    position: fixed; /* Fixa o cabeçalho no topo da tela */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Garante que o cabeçalho ocupe toda a largura */
-    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+    width: 100%;
+    z-index: 1000;
   }
 
   .main-container {
-    padding-top: 70px; /* Adiciona um espaçamento para compensar o cabeçalho fixo */
+    padding-top: 70px;
   }
 
   .menu-toggle {
@@ -863,17 +1011,17 @@ footer {
 
   .logo-container {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
 
   .logo {
     height: 60px;
     position: relative;
-    left: 0; /* Remove o deslocamento horizontal */
-    transform: none; /* Remove o deslocamento centralizado anterior */
-    margin: 0 auto; /* Garante que a logo fique centralizada */
+    left: 0;
+    transform: none;
+    margin: 0 auto;
   }
 
   section {
@@ -900,10 +1048,8 @@ footer {
   .footer-container {
     grid-template-columns: 1fr 1fr;
   }
-}
 
-/* Responsividade para os cards */
-@media (max-width: 768px) {
+  /* Cards services */
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -924,6 +1070,7 @@ footer {
   }
 }
 
+/* 576px para baixo */
 @media (max-width: 576px) {
   .logo {
     height: 50px;
@@ -942,6 +1089,7 @@ footer {
   }
 }
 
+/* 480px para baixo */
 @media (max-width: 480px) {
   .card-image {
     height: 120px;
@@ -957,5 +1105,26 @@ footer {
 
   .footer-container {
     grid-template-columns: 1fr;
+  }
+}
+
+/* 1024x600 - Ajuste específico */
+@media (width: 1024px) and (height: 600px) {
+  header {
+    padding-left: 0 !important;
+  }
+
+  .logo-container {
+    margin-left: -25px !important;
+    transform: translateX(-5px);
+  }
+
+  nav {
+    justify-content: flex-start;
+    padding-right: 3%;
+  }
+
+  .menu-items li:first-child {
+    margin-left: 15px;
   }
 }
