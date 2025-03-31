@@ -17,13 +17,6 @@
     <!-- Bibliotecas externas -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" /> <!-- Animações -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> <!-- Mapa Leaflet CSS -->
-
-    <link rel="preload" href="assets/img/ar-condicionado.webp" as="image" type="image/webp"> <!-- Pré-carregamento de imagem -->
-    <link rel="preload" href="assets/img/trabalho-altura.webp" as="image" type="image/webp"> <!-- Pré-carregamento de imagem -->
-    <link rel="preload" href="assets/img/recuperacao-estrutural.webp" as="image" type="image/webp"> <!-- Pré-carregamento de imagem -->
-    <link rel="preload" href="assets/img/impermeabilizacao.webp" as="image" type="image/webp"> <!-- Pré-carregamento de imagem -->
-    <link rel="preload" href="assets/img/manutencao-fachada.webp" as="image" type="image/webp"> <!-- Pré-carregamento de imagem -->
-    <link rel="preload" href="assets/img/inspecao-predial.webp" as="image" type="image/webp"> <!-- Pré-carregamento de imagem -->
 </head>
 
 <body>
@@ -109,14 +102,13 @@
         </section>
 
         <!-- Seção "Nossos Serviços" -->
-        <section id="servicos" data-aos="fade-up">
+        <section id="servicos">
             <h1>Nossos Serviços</h1>
             <div class="services-grid">
                 <!-- Card 1: Instalação de ar-condicionado -->
                 <div class="service-card">
-                    <div class="card-image first-card"> <!-- Adicionei a classe aqui -->
-                        <img src="assets/img/ar-condicionado.webp" alt="Instalação de ar-condicionado" class="ar-img" loading="lazy"
-                            width="300" height="180">
+                    <div class="card-image">
+                        <img src="assets/img/ar-condicionado.webp" alt="Instalação de ar-condicionado" class="ar-img">
                     </div>
                     <div class="card-content">
                         <h2>Instalação de caixas de ar-condicionado</h2>
@@ -127,8 +119,7 @@
                 <!-- Card 2: Trabalho em altura -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/img/trabalho-altura.webp" alt="Trabalho em altura" class="trabalho-img" loading="lazy" width="300"
-                            height="180">
+                        <img src="assets/img/trabalho-altura.webp" alt="Trabalho em altura" class="trabalho-img">
                     </div>
                     <div class="card-content">
                         <h2>Trabalho em altura</h2>
@@ -140,7 +131,7 @@
                 <div class="service-card">
                     <div class="card-image">
                         <img src="assets/img/recuperacao-estrutural.webp" alt="Recuperação estrutural"
-                            class="recuperacao-img" loading="lazy" width="300" height="180">
+                            class="recuperacao-img">
                     </div>
                     <div class="card-content">
                         <h2>Recuperação de Estruturas</h2>
@@ -151,8 +142,8 @@
                 <!-- Card 4: Impermeabilização -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/img/impermeabilizacao.webp" alt="Impermeabilização" class="impermeabilizacao-img" loading="lazy" width="300"
-                            height="180">
+                        <img src="assets/img/impermeabilizacao.webp" alt="Impermeabilização"
+                            class="impermeabilizacao-img">
                     </div>
                     <div class="card-content">
                         <h2>Impermeabilização</h2>
@@ -163,8 +154,8 @@
                 <!-- Card 5: Manutenção de fachada -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/img/manutencao-fachada.webp" alt="Manutenção de fachada" class="manutencao-img" loading="lazy"
-                            width="300" height="180">
+                        <img src="assets/img/manutencao-fachada.webp" alt="Manutenção de fachada"
+                            class="manutencao-img">
                     </div>
                     <div class="card-content">
                         <h2>Manutenção de fachada</h2>
@@ -175,8 +166,7 @@
                 <!-- Card 6: Inspeção predial -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/img/inspecao-predial.webp" alt="Inspeção predial" class="inspecao-img"
-                            loading="lazy" width="300" height="180">
+                        <img src="assets/img/inspecao-predial.webp" alt="Inspeção predial" class="inspecao-img">
                     </div>
                     <div class="card-content">
                         <h2>Inspeção predial</h2>
@@ -381,44 +371,6 @@
                     }
                 });
             });
-        });
-
-        // Otimização para a seção de serviços
-        document.addEventListener('DOMContentLoaded', function () {
-            const serviceCards = document.querySelectorAll('.service-card');
-
-            // Verifica se o dispositivo é mobile para desativar algumas animações
-            const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-            if (isMobile) {
-                serviceCards.forEach(card => {
-                    // Remove transições complexas em mobile
-                    card.style.transition = 'none';
-                    const img = card.querySelector('.card-image img');
-                    if (img) img.style.transition = 'none';
-                });
-            } else {
-                // Otimização para desktop
-                let ticking = false;
-
-                window.addEventListener('scroll', function () {
-                    if (!ticking) {
-                        window.requestAnimationFrame(function () {
-                            serviceCards.forEach(card => {
-                                const rect = card.getBoundingClientRect();
-                                // Só anima cards visíveis na viewport
-                                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                                    card.style.willChange = 'transform';
-                                } else {
-                                    card.style.willChange = 'auto';
-                                }
-                            });
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                });
-            }
         });
 
         // Configuração do mapa
