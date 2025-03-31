@@ -73,6 +73,7 @@
 
         <!-- Vídeo de fundo -->
         <div class="video-container">
+            <div class="loading-spinner"></div> <!-- Spinner de carregamento -->
             <video autoplay muted loop class="background-video">
                 <source src="assets/video/video_edificio.MP4" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
@@ -305,6 +306,17 @@
     <script>
         // Inicializa animações
         AOS.init();
+
+        // Carrega o vídeo de fundo após o carregamento da página
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.querySelector('.background-video');
+            const videoContainer = document.querySelector('.video-container');
+
+            // Quando o vídeo estiver carregado, remova o spinner
+            video.addEventListener('loadeddata', () => {
+                videoContainer.classList.add('loaded'); // Adiciona a classe para ocultar o spinner
+            });
+        });
 
         // Configura rolagem suave para links âncora
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
