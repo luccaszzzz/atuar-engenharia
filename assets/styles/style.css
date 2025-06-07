@@ -196,7 +196,6 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%);
 }
 
 .loading-spinner {
@@ -266,15 +265,17 @@ section p {
   word-wrap: break-word;
 }
 
-#empresa {
+#quem-somos {
   width: 100vw; /* Ocupa toda a largura da viewport */
   max-width: none; /* Remove a limitação de largura */
   margin: 0; /* Remove margens */
   padding: 40px 0px; /* Mantém o espaçamento interno */
   box-sizing: border-box; /* Inclui padding no cálculo da largura */
+  position: relative; /* Necessário para posicionar a imagem de fundo */
+  overflow: hidden; /* Garante que nada transborde */
 }
 
-#empresa .content {
+#quem-somos .content {
   max-width: 1200px; /* Limita a largura do texto */
   margin: 0 auto; /* Centraliza o conteúdo */
   padding: 0 20px; /* Adiciona espaçamento interno nas laterais */
@@ -300,7 +301,134 @@ section p {
   top: -3px;
 }
 
-#empresa,
+.impermeabilizacao-img {
+  object-position: center 75%; /* Move o foco da imagem para baixo */
+}
+
+.recuperacao-img {
+  object-position: center 75% !important;
+}
+
+.quem-somos-bg-image {
+  position: absolute; /* Necessário para posicionar a imagem de fundo */
+  top: 0; /* Posiciona a imagem no topo */
+  left: 0; /* Posiciona a imagem à esquerda */
+  width: 100%; /* Ocupa toda a largura da seção */
+  height: 100%; /* Ocupa toda a altura da seção */
+  background-image: url("../img/background.jpg");
+  background-size: cover; /* Cobre toda a área da seção */
+  background-position: center; /* Centraliza a imagem */
+  opacity: 0.2; /* Ajuste conforme necessário */
+  z-index: 1; /* Coloca a imagem atrás do conteúdo */
+}
+
+#por-que-nos-escolher {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #3f3f3e;
+  color: #fff;
+}
+
+.porque-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+#por-que-nos-escolher .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+#por-que-nos-escolher h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff; /* Texto em branco */
+  position: relative;
+  padding-bottom: 15px;
+}
+
+#por-que-nos-escolher h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #e52629;
+}
+
+#por-que-nos-escolher .destaque {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff; /* Texto em branco */
+}
+
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.diferencial {
+  background-color: #3f3f3e;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #e52629;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diferencial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.diferencial h2 {
+  color: #fff; /* Texto em branco */
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.diferencial h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #e52629;
+}
+
+.diferencial p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #fff; /* Texto em branco */
+}
+
+#quem-somos,
 #onde-estamos {
   background-color: #3f3f3e;
   color: #fff;
@@ -311,56 +439,6 @@ section p {
 #orcamento {
   background-color: #f4f4f4;
   color: #333;
-}
-
-#blog {
-  width: 100%; /* Ajusta a largura para não ocupar toda a viewport */
-  max-width: 1200px; /* Limita a largura máxima */
-  margin: 0 auto; /* Centraliza a seção */
-  padding: 40px 20px; /* Ajusta o espaçamento interno */
-  box-sizing: border-box; /* Inclui padding no cálculo da largura */
-  background-color: #3f3f3e; /* Cor de fundo */
-  color: #fff; /* Cor do texto */
-  position: relative;
-  overflow: hidden;
-  padding: 0; /* Removemos o padding padrão das sections */
-  height: 400px; /* Altura fixa para a seção */
-}
-
-.blog-bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../img/blog-background.webp");
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(100%);
-  z-index: 1;
-}
-
-#blog .content {
-  max-width: 1200px; /* Limita a largura do texto */
-  margin: 0 auto; /* Centraliza o conteúdo */
-  padding: 0 20px; /* Adiciona espaçamento interno nas laterais */
-  position: relative;
-  z-index: 2;
-  background-color: rgba(
-    63,
-    63,
-    62,
-    0.85
-  ); /* Fundo semi-transparente para legibilidade */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  box-sizing: border-box;
-  max-width: none; /* Sobrescreve o max-width do .content */
 }
 
 #onde-estamos {
@@ -536,24 +614,6 @@ section p {
 /* =============================================
      BOTÕES
      ============================================= */
-#blog .button {
-  display: inline-block;
-  background-color: #e52629; /* Cor de fundo vermelha */
-  color: #fff; /* Cor do texto branca */
-  padding: 12px 24px; /* Espaçamento interno */
-  border-radius: 5px; /* Bordas arredondadas */
-  text-decoration: none; /* Remove o sublinhado */
-  font-size: 1em; /* Tamanho da fonte */
-  font-weight: bold; /* Texto em negrito */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
-  margin-top: 20px; /* Espaçamento superior */
-}
-
-#blog .button:hover {
-  background-color: #c41f24; /* Cor mais escura ao passar o mouse */
-  transform: scale(1.05); /* Leve aumento no tamanho ao passar o mouse */
-}
-
 button {
   background-color: #25d366;
   color: #fff;
@@ -1103,10 +1163,6 @@ footer {
     height: 400px;
   }
 
-  #blog {
-    height: 350px;
-  }
-
   .footer-container {
     grid-template-columns: 1fr 1fr;
   }
@@ -1127,6 +1183,14 @@ footer {
 
   .service-card:hover .card-image img {
     transform: none;
+  }
+
+  #por-que-nos-escolher {
+    padding: 40px 0;
+  }
+
+  #por-que-nos-escolher h1 {
+    font-size: 2em;
   }
 
   .engenheiro-container {
@@ -1171,8 +1235,8 @@ footer {
     height: 120px;
   }
 
-  #blog {
-    height: 300px;
+  #por-que-nos-escolher {
+    padding: 30px 0;
   }
 
   .engenheiro-foto {
