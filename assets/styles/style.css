@@ -16,7 +16,7 @@ body {
 
 /* =============================================
      CONTAINER PRINCIPAL
-     ============================================= */
+   ============================================= */
 .main-container {
   width: 100%;
   max-width: 100%;
@@ -25,7 +25,7 @@ body {
 
 /* =============================================
      HEADER
-     ============================================= */
+   ============================================= */
 header {
   background-color: #3f3f3e;
   color: #fff;
@@ -315,7 +315,7 @@ section p {
   left: 0; /* Posiciona a imagem à esquerda */
   width: 100%; /* Ocupa toda a largura da seção */
   height: 100%; /* Ocupa toda a altura da seção */
-  background-image: url("../img/background.jpg");
+  background-image: url("../img/bg-image.jpg");
   background-size: cover; /* Cobre toda a área da seção */
   background-position: center; /* Centraliza a imagem */
   opacity: 0.2; /* Ajuste conforme necessário */
@@ -339,7 +339,7 @@ section p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/background.jpg");
+  background-image: url("../img/bg-image.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.2;
@@ -435,7 +435,7 @@ section p {
 }
 
 #servicos,
-#engenheiro,
+#instagram,
 #orcamento {
   background-color: #f4f4f4;
   color: #333;
@@ -444,6 +444,110 @@ section p {
 #onde-estamos {
   background-color: #3f3f3e;
   color: #fff;
+}
+
+.onde-estamos-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bg-image.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+/* Atualize a seção "onde-estamos" para incluir position relative */
+#onde-estamos {
+  position: relative;
+  overflow: hidden;
+  background-color: #3f3f3e;
+  color: #fff;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 60px 0;
+}
+
+/* Garanta que o conteúdo fique acima do background */
+#onde-estamos .content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Animação de pulsar */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Botão "Solicitar orçamento" no cabeçalho */
+.orcamento-button {
+  background: #e52629;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background 0.3s ease;
+  margin-left: 20px; /* Espaçamento do menu */
+  white-space: nowrap; /* Evita quebra de linha */
+}
+
+.orcamento-button:hover {
+  background: #c41e21;
+  transform: scale(1.05);
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+  .orcamento-button {
+    margin-left: 0;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+  }
 }
 
 /* =============================================
@@ -532,41 +636,18 @@ section p {
 }
 
 /* =============================================
-   SEÇÃO DO ENGENHEIRO
+   SEÇÃO DO INSTAGRAM
    ============================================= */
-.engenheiro-container {
+.instagram {
   display: flex;
   align-items: center;
   gap: 40px;
   margin-top: 30px;
 }
 
-.engenheiro-foto {
-  flex: 0 0 300px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border: 4px solid #e52629;
-}
-
-.engenheiro-foto img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.engenheiro-foto:hover img {
-  transform: scale(1.03);
-}
-
-.engenheiro-texto {
-  flex: 1;
-}
-
 /* =============================================
      MAPA
-     ============================================= */
+   ============================================= */
 #map {
   height: 400px;
   width: 100%;
@@ -1193,7 +1274,7 @@ footer {
     font-size: 2em;
   }
 
-  .engenheiro-container {
+  .instagram {
     flex-direction: column;
     gap: 25px;
   }
