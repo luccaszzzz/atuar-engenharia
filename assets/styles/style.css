@@ -8,15 +8,11 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #f4f4f4;
   overflow-x: hidden;
 }
 
-/* =============================================
-     CONTAINER PRINCIPAL
-   ============================================= */
 .main-container {
   width: 100%;
   max-width: 100%;
@@ -24,7 +20,7 @@ body {
 }
 
 /* =============================================
-     HEADER
+   HEADER & NAV
    ============================================= */
 header {
   background-color: #3f3f3e;
@@ -56,7 +52,7 @@ nav {
 
 .logo {
   height: 80px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .menu-toggle {
@@ -73,22 +69,28 @@ nav {
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
-
 .menu-toggle:hover {
   color: #e52629 !important;
   background-color: transparent !important;
 }
-
 .menu-toggle:focus {
   outline: none;
   color: #e52629;
 }
-
 .menu-toggle::-moz-focus-inner {
   border: 0;
+}
+.menu-toggle .menu-icon,
+.menu-toggle .close-icon {
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+.menu-toggle .close-icon {
+  display: none;
+  color: #e52629;
 }
 
 .nav-content {
@@ -97,30 +99,14 @@ nav {
   flex-grow: 1;
   justify-content: center;
 }
-
-/* Estilo quando o menu está ativo */
 .nav-content.active + .menu-toggle,
 .nav-content.active ~ .menu-toggle {
   color: #e52629;
 }
-
-/* Estilos dos ícones */
-.menu-toggle .menu-icon,
-.menu-toggle .close-icon {
-  display: inline-block;
-  transition: opacity 0.3s ease;
-}
-
-.menu-toggle .close-icon {
-  display: none;
-  color: #e52629;
-}
-
 .nav-content.active + .menu-toggle .menu-icon,
 .nav-content.active ~ .menu-toggle .menu-icon {
   display: none;
 }
-
 .nav-content.active + .menu-toggle .close-icon,
 .nav-content.active ~ .menu-toggle .close-icon {
   display: inline-block;
@@ -134,23 +120,20 @@ nav {
   justify-content: center;
   flex-grow: 1;
 }
-
 .menu-items li {
   margin: 0 15px;
 }
-
 .menu-items a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s, border-bottom 0.3s;
+  transition: color 0.2s, border-bottom 0.2s;
   border-bottom: 2px solid transparent;
   padding: 5px 0;
   font-size: 16px;
   height: auto;
   min-width: 90px;
 }
-
 .menu-items a:hover {
   color: #e52629;
   border-bottom: 2px solid #e52629;
@@ -161,23 +144,21 @@ nav {
   align-items: center;
   margin-left: auto;
 }
-
 .social-icons a {
   margin: 0 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
-
 .social-icons a:hover {
   transform: translateY(-3px);
 }
-
 .social-icons img {
   height: 30px;
+  transition: transform 0.2s ease;
 }
 
 /* =============================================
-     VÍDEO
-     ============================================= */
+   VÍDEO DE FUNDO
+   ============================================= */
 .video-container {
   width: 100vw;
   position: relative;
@@ -185,10 +166,9 @@ nav {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  height: 600px;
+  height: 500px;
   overflow: hidden;
 }
-
 .background-video {
   position: absolute;
   top: 0;
@@ -197,7 +177,6 @@ nav {
   height: 100%;
   object-fit: cover;
 }
-
 .loading-spinner {
   position: absolute;
   top: 50%;
@@ -211,25 +190,17 @@ nav {
   animation: spin 1s linear infinite;
   z-index: 10;
 }
-
-/* Animação de rotação */
 @keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+  0% { transform: translate(-50%, -50%) rotate(0deg);}
+  100% { transform: translate(-50%, -50%) rotate(360deg);}
 }
-
-/* Oculta o spinner quando o vídeo estiver carregado */
 .video-container.loaded .loading-spinner {
   display: none;
 }
 
 /* =============================================
-     SEÇÕES DE CONTEÚDO
-     ============================================= */
+   SEÇÕES DE CONTEÚDO
+   ============================================= */
 section {
   width: 100%;
   padding: 40px 20px;
@@ -237,7 +208,6 @@ section {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 section h1 {
   font-size: 2em;
   margin-bottom: 20px;
@@ -245,7 +215,6 @@ section h1 {
   position: relative;
   padding-bottom: 15px;
 }
-
 section h1::after {
   content: "";
   position: absolute;
@@ -256,7 +225,6 @@ section h1::after {
   height: 3px;
   background-color: #e52629;
 }
-
 section p {
   font-size: 1.1em;
   line-height: 1.6;
@@ -265,74 +233,54 @@ section p {
   word-wrap: break-word;
 }
 
-#quem-somos {
-  width: 100vw; /* Ocupa toda a largura da viewport */
-  max-width: none; /* Remove a limitação de largura */
-  margin: 0; /* Remove margens */
-  padding: 40px 0px; /* Mantém o espaçamento interno */
-  box-sizing: border-box; /* Inclui padding no cálculo da largura */
-  position: relative; /* Necessário para posicionar a imagem de fundo */
-  overflow: hidden; /* Garante que nada transborde */
-}
-
-#quem-somos .content {
-  max-width: 1200px; /* Limita a largura do texto */
-  margin: 0 auto; /* Centraliza o conteúdo */
-  padding: 0 20px; /* Adiciona espaçamento interno nas laterais */
-}
-
-#servicos ul {
-  list-style: none;
-  padding: 0;
-}
-
-#servicos ul li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 25px;
-}
-
-#servicos ul li:before {
-  content: "•";
-  color: #e52629;
-  font-size: 1.5em;
-  position: absolute;
-  left: 0;
-  top: -3px;
-}
-
-.impermeabilizacao-img {
-  object-position: center 75%; /* Move o foco da imagem para baixo */
-}
-
-.recuperacao-img {
-  object-position: center 75% !important;
-}
-
-.quem-somos-bg-image {
-  position: absolute; /* Necessário para posicionar a imagem de fundo */
-  top: 0; /* Posiciona a imagem no topo */
-  left: 0; /* Posiciona a imagem à esquerda */
-  width: 100%; /* Ocupa toda a largura da seção */
-  height: 100%; /* Ocupa toda a altura da seção */
-  background-image: url("../img/bg-image.jpg");
-  background-size: cover; /* Cobre toda a área da seção */
-  background-position: center; /* Centraliza a imagem */
-  opacity: 0.2; /* Ajuste conforme necessário */
-  z-index: 1; /* Coloca a imagem atrás do conteúdo */
-}
-
-#por-que-nos-escolher {
-  width: 100vw;
-  max-width: none;
-  margin: 0;
-  padding: 60px 0;
-  position: relative;
-  overflow: hidden;
+/* =============================================
+   SEÇÕES ESPECÍFICAS
+   ============================================= */
+#quem-somos,
+#onde-estamos {
   background-color: #3f3f3e;
   color: #fff;
 }
-
+#servicos,
+#instagram,
+#orcamento {
+  background-color: #f4f4f4;
+  color: #333;
+}
+#quem-somos {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 40px 0px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+#quem-somos .content,
+#onde-estamos .content,
+#por-que-nos-escolher .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+#quem-somos .content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#quem-somos p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+#quem-somos .botao-vermelho {
+  margin: 0 auto;
+}
+.quem-somos-bg-image,
+.onde-estamos-bg-image,
 .porque-bg-image {
   position: absolute;
   top: 0;
@@ -345,24 +293,32 @@ section p {
   opacity: 0.2;
   z-index: 1;
 }
-
-#por-que-nos-escolher .content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+#onde-estamos {
   position: relative;
-  z-index: 2;
+  overflow: hidden;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 60px 0;
 }
-
+#por-que-nos-escolher {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #3f3f3e;
+  color: #fff;
+}
 #por-que-nos-escolher h1 {
   font-size: 2.5em;
   text-align: center;
   margin-bottom: 30px;
-  color: #fff; /* Texto em branco */
+  color: #fff;
   position: relative;
   padding-bottom: 15px;
 }
-
 #por-que-nos-escolher h1::after {
   content: "";
   position: absolute;
@@ -373,7 +329,6 @@ section p {
   height: 3px;
   background-color: #e52629;
 }
-
 #por-que-nos-escolher .destaque {
   font-size: 1.2em;
   text-align: center;
@@ -381,37 +336,32 @@ section p {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  color: #fff; /* Texto em branco */
+  color: #fff;
 }
-
 .diferenciais-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
-
 .diferencial {
   background-color: #3f3f3e;
   padding: 25px;
   border-radius: 8px;
   border-left: 4px solid #e52629;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .diferencial:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
 .diferencial h2 {
-  color: #fff; /* Texto em branco */
+  color: #fff;
   font-size: 1.3em;
   margin-bottom: 15px;
   position: relative;
   padding-bottom: 10px;
 }
-
 .diferencial h2::after {
   content: "";
   position: absolute;
@@ -421,66 +371,129 @@ section p {
   height: 2px;
   background-color: #e52629;
 }
-
 .diferencial p {
   font-size: 1em;
   line-height: 1.6;
-  color: #fff; /* Texto em branco */
-}
-
-#quem-somos,
-#onde-estamos {
-  background-color: #3f3f3e;
   color: #fff;
 }
 
-#servicos,
-#instagram,
-#orcamento {
-  background-color: #f4f4f4;
-  color: #333;
+/* =============================================
+   SERVIÇOS - CARDS COM IMAGENS
+   ============================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
-
-#onde-estamos {
-  background-color: #3f3f3e;
-  color: #fff;
+.service-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-
-.onde-estamos-bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.card-image {
+  height: 180px;
+  overflow: hidden;
+}
+.card-image img {
   width: 100%;
   height: 100%;
-  background-image: url("../img/bg-image.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.2;
-  z-index: 1;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+.service-card:hover .card-image img {
+  transform: scale(1.05);
+}
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.service-card h2 {
+  color: #3f3f3e;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.service-card h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #e52629;
+}
+.service-card p {
+  color: #666;
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: auto;
 }
 
-/* Atualize a seção "onde-estamos" para incluir position relative */
-#onde-estamos {
-  position: relative;
-  overflow: hidden;
-  background-color: #3f3f3e;
+.impermeabilizacao-img {
+  object-position: center 75%;
+}
+.recuperacao-img {
+  object-position: 0 55% !important;
+}
+.inspecao-img {
+  object-position: center bottom;
+}
+
+/* =============================================
+   BOTÕES E WHATSAPP FLOAT
+   ============================================= */
+.orcamento-button,
+.botao-vermelho {
+  background: #e52629;
   color: #fff;
-  width: 100vw;
-  max-width: none;
-  margin: 0;
-  padding: 60px 0;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+.orcamento-button {
+  margin-left: 20px;
+}
+.orcamento-button:hover,
+.botao-vermelho:hover {
+  background: #c41e21;
+  transform: scale(1.05);
 }
 
-/* Garanta que o conteúdo fique acima do background */
-#onde-estamos .content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.botao-vermelho {
+  background: #e52629;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.2s, transform 0.2s;
+  display: inline-block;
+  margin-top: 10px;
+}
+.botao-vermelho:hover {
+  background: #c41e21;
+  transform: scale(1.05);
 }
 
-/* Botão flutuante do WhatsApp */
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -494,239 +507,23 @@ section p {
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   animation: pulse 2s infinite;
 }
-
 .whatsapp-float:hover {
   background-color: #128c7e;
   transform: scale(1.1);
 }
-
 .whatsapp-float img {
   width: 40px;
   height: 40px;
 }
-
-/* Animação de pulsar */
 @keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);}
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);}
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);}
 }
-
-/* Botão "Solicitar orçamento" no cabeçalho */
-.orcamento-button {
-  background: #e52629;
-  color: #fff;
-  font-weight: bold;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 1em;
-  transition: background 0.3s ease;
-  margin-left: 20px; /* Espaçamento do menu */
-  white-space: nowrap; /* Evita quebra de linha */
-}
-
-.orcamento-button:hover {
-  background: #c41e21;
-  transform: scale(1.05);
-}
-
-/* Ajuste para dispositivos móveis */
-@media (max-width: 768px) {
-  .orcamento-button {
-    margin-left: 0;
-    margin-top: 15px;
-    display: block;
-    text-align: center;
-  }
-}
-
-/* =============================================
-   SERVIÇOS - CARDS COM IMAGENS
-   ============================================= */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.service-card {
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.card-image {
-  height: 180px;
-  overflow: hidden;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-
-.service-card:hover .card-image img {
-  transform: scale(1.05);
-}
-
-.card-content {
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.service-card h2 {
-  color: #3f3f3e;
-  font-size: 1.3em;
-  margin-bottom: 15px;
-  position: relative;
-  padding-bottom: 10px;
-}
-
-.service-card h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background-color: #e52629;
-}
-
-.service-card p {
-  color: #666;
-  font-size: 1em;
-  line-height: 1.5;
-  text-align: left;
-  margin-top: auto;
-}
-
-/* Ajuste específico para a imagem de inspeção predial */
-.inspecao-img {
-  object-position: center bottom; /* Foca na parte inferior da imagem */
-}
-
-/* Ajuste mais preciso */
-.recuperacao-img {
-  object-position: 0 55%;
-}
-
-/* =============================================
-   SEÇÃO DO INSTAGRAM
-   ============================================= */
-.instagram {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-/* =============================================
-     MAPA
-   ============================================= */
-#map {
-  height: 400px;
-  width: 100%;
-  border-radius: 8px;
-  margin-top: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border: 2px solid #e52629;
-}
-
-.leaflet-popup-content-wrapper {
-  border-radius: 4px;
-}
-
-.leaflet-popup-content {
-  margin: 8px 12px;
-  font-family: Arial, sans-serif;
-}
-
-.map-container {
-  position: relative;
-}
-
-#map {
-  pointer-events: none; /* Desativa a interação por padrão */
-}
-
-.map-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 10; /* Coloca a camada acima do mapa */
-}
-
-.map-container.active #map {
-  pointer-events: auto; /* Ativa a interação quando o mapa está ativo */
-}
-
-.map-container.active .map-overlay {
-  display: none; /* Remove a camada quando o mapa está ativo */
-}
-
-/* =============================================
-     BOTÕES
-     ============================================= */
-button {
-  background-color: #25d366;
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  font-size: 0.9em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #128c7e;
-}
-
-#orcamento {
-  text-align: center;
-}
-
-#orcamento p {
-  text-align: center; /* Centraliza o texto */
-  margin: 0 auto; /* Garante espaçamento uniforme */
-}
-
-#orcamento a {
-  display: inline-block;
-  text-decoration: none;
-  margin: 20px auto 0;
-  width: auto;
-}
-
+button,
 #orcamento button {
   background-color: #25d366;
   color: #fff;
@@ -735,20 +532,98 @@ button:hover {
   border-radius: 5px;
   font-size: 1em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   display: block;
   width: auto;
-  margin: 0 auto;
+  margin: 20px auto 0;
   white-space: nowrap;
 }
-
+button:hover,
 #orcamento button:hover {
   background-color: #128c7e;
 }
+#orcamento {
+  text-align: center;
+}
+#orcamento p {
+  text-align: center;
+  margin: 0 auto;
+}
+#orcamento a {
+  display: inline-block;
+  text-decoration: none;
+  margin: 20px auto 0;
+  width: auto;
+}
 
 /* =============================================
-     FOOTER
-     ============================================= */
+   INSTAGRAM
+   ============================================= */
+.instagram {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.instagram-feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+.instagram-feed img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  max-width: 120px;
+  height: auto;
+}
+
+/* =============================================
+   MAPA
+   ============================================= */
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #e52629;
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+}
+.leaflet-popup-content {
+  margin: 8px 12px;
+  font-family: Arial, sans-serif;
+}
+.map-container {
+  position: relative;
+}
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 10;
+}
+.map-container.active #map {
+  pointer-events: auto;
+}
+.map-container.active .map-overlay {
+  display: none;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
 footer {
   background-color: #3f3f3e;
   color: #fff;
@@ -758,7 +633,6 @@ footer {
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
   border-top: 2px solid #e52629;
 }
-
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -767,54 +641,51 @@ footer {
   gap: 30px;
   padding: 0 20px;
 }
-
 .footer-section {
   margin-bottom: 20px;
 }
-
 .footer-logo {
   height: 50px;
   margin-bottom: 15px;
 }
-
 .footer-section h3 {
-  color: #e52629;
-  margin-bottom: 15px;
-  font-size: 1.1em;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+  width: 100%;
 }
-
+.footer-section h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #e52629;
+}
 .footer-section ul {
   list-style: none;
   padding: 0;
 }
-
 .footer-section li {
   margin-bottom: 8px;
 }
-
-.footer-section a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-section a:hover {
-  color: #e52629;
-}
-
-.contact-info img {
-  width: 16px;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-
-/* Links úteis do footer - mesma animação do header */
+.footer-section a,
 .footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
   position: relative;
   padding-bottom: 3px;
-  transition: color 0.3s ease;
 }
-
+.footer-section a:hover,
+.footer-section ul li a:hover {
+  color: #e52629;
+}
 .footer-section ul li a::after {
   content: "";
   position: absolute;
@@ -823,51 +694,36 @@ footer {
   width: 0;
   height: 2px;
   background-color: #e52629;
-  transition: width 0.3s ease;
+  transition: width 0.2s ease;
 }
-
-.footer-section ul li a:hover {
-  color: #e52629;
-}
-
 .footer-section ul li a:hover::after {
   width: 100%;
 }
-
-/* Estilo específico para os ícones do rodapé */
 .footer-social-icons {
   display: flex !important;
-  justify-content: center; /* Centraliza horizontalmente */
-  gap: 0px; /* Espaçamento entre os ícones */
-  flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
-  margin-top: 10px; /* Espaço entre o título e os ícones */
+  justify-content: center;
+  gap: 0px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
-
-/* Centraliza o título "Redes Sociais" */
-.footer-section h3 {
-  text-align: center;
-  width: 100%;
-}
-
-/* Ícones sociais do footer - mesma animação do header */
 .footer-social-icons a {
-  transition: transform 0.3s ease;
-  display: inline-block; /* Necessário para a transformação */
+  transition: transform 0.2s ease;
+  display: inline-block;
 }
-
 .footer-social-icons a:hover {
   transform: translateY(-3px);
 }
-
-/* Manter o efeito de escala nos ícones */
 .footer-social-icons img {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
-
 .footer-social-icons a:hover img {
   transform: scale(1.1);
 }
-
+.contact-info img {
+  width: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 .copyright {
   text-align: center;
   padding-top: 20px;
