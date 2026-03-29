@@ -48,7 +48,7 @@ Este site foi projetado para transmitir autoridade e profissionalismo. Ele serve
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/luccaszzzz/atuar-engenharia.git](https://github.com/luccaszzzz/atuar-engenharia.git)
+   git clone https://github.com/luccaszzzz/atuar-engenharia.git
    ```
    
 2. Acesse a pasta do projeto:
