@@ -1,5 +1,7 @@
 # Atuar Engenharia 🏗️
 
+> **⚠️ Atenção:** Este projeto não foi finalizado e serve apenas para fins de portfólio e estudo.
+
 Landing page profissional desenvolvida para a **Atuar Engenharia**, empresa especializada em engenharia civil, manutenção de fachadas e impermeabilização, com sede em Natal-RN.
 
 ## 🚀 Demonstração
@@ -46,7 +48,7 @@ Este site foi projetado para transmitir autoridade e profissionalismo. Ele serve
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/luccaszzzz/atuar-engenharia.git
+   git clone [https://github.com/luccaszzzz/atuar-engenharia.git](https://github.com/luccaszzzz/atuar-engenharia.git)
    ```
    
 2. Acesse a pasta do projeto:
