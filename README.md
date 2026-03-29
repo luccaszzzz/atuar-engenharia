@@ -40,16 +40,16 @@ Este site foi projetado para transmitir autoridade e profissionalismo. Ele serve
 └── README.md
 ```
 
-⚙️ Como rodar o projeto localmente
-Clone o repositório:
-
-Bash
-git clone https://github.com/luccaszzzz/atuar-engenharia.git
-Acesse a pasta:
-
-Bash
-cd atuar-engenharia
-Abra o arquivo index.html no seu navegador de preferência.
+## ⚙️ Como rodar o projeto localmente
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/luccaszzzz/atuar-engenharia.git](https://github.com/luccaszzzz/atuar-engenharia.git)
+2. **Acesse a pasta do projeto:**
+```bash
+   cd atuar-engenharia
+3. **Abra o arquivo principal:**
+  Basta abrir o arquivo index.html em seu navegador de preferência para visualizar o site.
+```
 
 👨‍💻 Desenvolvedor
 luccaszzzz
