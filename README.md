@@ -40,6 +40,8 @@ Este site foi projetado para transmitir autoridade e profissionalismo. Ele serve
 └── README.md
 ```
 
+---
+
 ## ⚙️ Como rodar o projeto localmente
 
 1. **Clone o repositório:**
@@ -54,9 +56,14 @@ Este site foi projetado para transmitir autoridade e profissionalismo. Ele serve
 
 3. Abra o arquivo principal:
 
-Basta abrir o arquivo index.html em seu navegador de preferência para visualizar o site.
+   Basta abrir o arquivo index.html em seu navegador de preferência para visualizar o site.
+
+---
 
 👨‍💻 Desenvolvedor
-luccaszzzz
+   
+   luccaszzzz
+
+---
 
 © 2026 Atuar Engenharia - Natal/RN.
