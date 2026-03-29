@@ -44,13 +44,15 @@ Este site foi projetado para transmitir autoridade e profissionalismo. Ele serve
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/luccaszzzz/atuar-engenharia.git](https://github.com/luccaszzzz/atuar-engenharia.git)
+   git clone https://github.com/luccaszzzz/atuar-engenharia.git
+   ```
+   
+2. Acesse a pasta do projeto:
+   ```bash
+   cd atuar-engenharia
+   ```
 
-2. **Acesse a pasta do projeto:**
-
-cd atuar-engenharia
-
-3. **Abra o arquivo principal:**
+3. Abra o arquivo principal:
 
 Basta abrir o arquivo index.html em seu navegador de preferência para visualizar o site.
 
