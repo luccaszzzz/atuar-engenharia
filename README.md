@@ -56,14 +56,13 @@ Este site foi projetado para transmitir autoridade e profissionalismo. Ele serve
 
 3. Abra o arquivo principal:
 
-   Basta abrir o arquivo index.html em seu navegador de preferência para visualizar o site.
+   Basta abrir o arquivo _index.html_ em seu navegador de preferência para visualizar o site.
 
 ---
 
-👨‍💻 Desenvolvedor
-   
-   luccaszzzz
+## 👨‍💻 Desenvolvedor
+**luccaszzzz**
 
 ---
 
-© 2026 Atuar Engenharia - Natal/RN.
+*© 2025 Atuar Engenharia - Natal/RN.*
