@@ -584,6 +584,11 @@ button:hover,
   gap: 15px;
   width: 100%;
 }
+.instagram-feed > div {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .instagram-feed img {
   display: block;
   margin: 0 auto;

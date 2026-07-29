@@ -1,70 +1,84 @@
-# Atuar Engenharia 🏗️
+# Atuar Engenharia
 
-> **⚠️ Atenção:** Este projeto não foi finalizado e serve apenas para fins de portfólio e estudo.
+Institutional landing page for Atuar Engenharia, a civil engineering company based in Natal, RN. The site presents the company's services, differentials, Instagram feed, and location, with a direct WhatsApp quote request integration.
 
-Landing page profissional desenvolvida para a **Atuar Engenharia**, empresa especializada em engenharia civil, manutenção de fachadas e impermeabilização, com sede em Natal-RN.
+Built as a freelance project with pure HTML, CSS, and JavaScript — no framework or build tool required.
 
-## 🚀 Demonstração
-O projeto está disponível para visualização online em:
-👉 [https://luccaszzzz.github.io/atuar-engenharia/](https://luccaszzzz.github.io/atuar-engenharia/)
+> Status: this project is currently archived and no longer under active development. It is kept as a reference implementation of the landing page.
 
 ---
 
-## 📌 Sobre o Projeto
-Este site foi projetado para transmitir autoridade e profissionalismo. Ele serve como o principal canal de conversão da empresa, destacando serviços técnicos como recuperação estrutural, pintura predial e proteção de caixas d'água.
+## Features
 
-### Destaques Técnicos:
-* **Experiência de Carregamento:** Implementação de um *spinner* de loading que monitora o carregamento do vídeo de fundo (Hero section) para garantir uma entrada visual fluida.
-* **Interatividade:** Navegação baseada em *Smooth Scroll* para uma experiência de página única (Single Page) mais moderna.
-* **Design Responsivo:** Layout totalmente adaptável para dispositivos móveis, com menu hambúrguer customizado e controle de transbordamento de tela.
-* **SEO & Conversão:** Estrutura semântica para motores de busca e integração direta com WhatsApp para orçamentos rápidos.
-
----
-
-## 🛠️ Tecnologias e Recursos
-* **HTML5 & CSS3:** Estrutura e estilização avançada com Flexbox e Grid.
-* **JavaScript Vanilla:** Lógica de manipulação de DOM, controle de menu e eventos de mídia.
-* **AOS (Animate On Scroll):** Biblioteca utilizada para animações de entrada de elementos durante a rolagem.
-* **Leaflet:** Estrutura preparada para integração de mapas.
-* **SnapWidget:** Integração do feed do Instagram para portfólio dinâmico.
+| Feature | Description |
+|---|---|
+| Video Hero | Background video with loading spinner on the homepage |
+| Services Grid | 6 service cards: façade maintenance, structural recovery, waterproofing, building painting, AC unit installation, and building inspection |
+| Scroll Animations | AOS (Animate On Scroll) library for entrance animations throughout the page |
+| Responsive Menu | Hamburger menu for mobile with smooth open/close toggle |
+| Instagram Feed | Embedded feed via Elfsight |
+| WhatsApp Button | Floating button with pre-filled quote request message |
+| Location Section | Static map image with address details |
+| Single-page layout | Navigation links point to sections of the same page |
 
 ---
 
-## 📂 Estrutura de Pastas
-```plaintext
+## Screenshots
+
+**Home**
+![Home](docs/screenshots/home.png)
+
+**Services**
+![Services](docs/screenshots/servicos.png)
+
+**About**
+![About](docs/screenshots/quem-somos.png)
+
+---
+
+## Project Structure
+
+```
+├── index.html                 # Main landing page
 ├── assets/
 │   ├── styles/
-│   │   └── style.css      # Estilização global e responsividade
-│   ├── img/               # Logotipos, ícones e imagens otimizadas
-│   ├── video/             # Background video para a seção Hero
-│   └── main.js            # Lógica do menu, animações e carregamento
-├── index.html             # Estrutura principal da Landing Page
-└── README.md
+│   │   └── style.css          # Main stylesheet
+│   ├── img/                   # Images and icons
+│   ├── video/
+│   │   └── video_edificio.mp4 # Hero background video
+│   └── main.js                # Animations, menu, and smooth scroll
+└── docs/
+    └── screenshots/           # Project screenshots
 ```
 
 ---
 
-## ⚙️ Como rodar o projeto localmente
+## Technologies
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/luccaszzzz/atuar-engenharia.git
-   ```
-   
-2. Acesse a pasta do projeto:
-   ```bash
-   cd atuar-engenharia
-   ```
-
-3. Abra o arquivo principal:
-
-   Basta abrir o arquivo _index.html_ em seu navegador de preferência para visualizar o site.
+- HTML5
+- CSS3 (per-page stylesheets)
+- JavaScript (vanilla)
+- [AOS](https://michalsnik.github.io/aos/) 2.3.4 — scroll animations
+- [Elfsight](https://elfsight.com/) — Instagram feed embed
 
 ---
 
-## 👨‍💻 Desenvolvedor
-**luccaszzzz**
+## How to Run
+
+No installation required. Open `index.html` directly in a browser, or use VS Code Live Server for a better development experience:
+
+1. Install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in VS Code
+2. Right-click `index.html`
+3. Select **Open with Live Server**
+
+> The background video requires the file `assets/video/video_edificio.mp4` to be present locally.
 
 ---
 
-*© 2025 Atuar Engenharia - Natal/RN.*
+## Author
+
+Developed by [Lucas Emanoel da Silva Freitas](https://www.linkedin.com/in/lucas-emanoel-38a440238/)
+
+---
+
+[Leia em Português](README.pt-br.md)
