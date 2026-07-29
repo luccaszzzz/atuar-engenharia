@@ -23,16 +23,11 @@ Built as a freelance project with pure HTML, CSS, and JavaScript — no framewor
 
 ---
 
-## Screenshots
+## Preview
 
-**Home**
-![Home](docs/screenshots/home.png)
+You can view the live version of the landing page here:
 
-**Services**
-![Services](docs/screenshots/servicos.png)
-
-**About**
-![About](docs/screenshots/quem-somos.png)
+- https://luccaszzzz.github.io/atuar-engenharia/
 
 ---
 

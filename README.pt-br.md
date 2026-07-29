@@ -23,16 +23,11 @@ Desenvolvido como projeto freelance em HTML, CSS e JavaScript puro — sem frame
 
 ---
 
-## Screenshots
+## Preview
 
-**Home**
-![Home](docs/screenshots/home.png)
+Você pode visualizar a versão online da landing page aqui:
 
-**Serviços**
-![Serviços](docs/screenshots/servicos.png)
-
-**Quem Somos**
-![Quem Somos](docs/screenshots/quem-somos.png)
+- https://luccaszzzz.github.io/atuar-engenharia/
 
 ---
 
