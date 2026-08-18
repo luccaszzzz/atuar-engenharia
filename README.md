@@ -27,7 +27,7 @@ Built as a freelance project with pure HTML, CSS, and JavaScript — no framewor
 
 You can view the live version of the landing page here:
 
-- https://luccaszzzz.github.io/atuar-engenharia/
+- https://lucsemanoel.github.io/atuar-engenharia/
 
 ---
 
