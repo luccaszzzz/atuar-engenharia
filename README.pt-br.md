@@ -27,7 +27,7 @@ Desenvolvido como projeto freelance em HTML, CSS e JavaScript puro — sem frame
 
 Você pode visualizar a versão online da landing page aqui:
 
-- https://luccaszzzz.github.io/atuar-engenharia/
+- https://lucsemanoel.github.io/atuar-engenharia/
 
 ---
 
